@@ -6,9 +6,6 @@
 
         <title>My School App | @yield('title')</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
         <!-- Styles -->
         <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" type="text/css">
         <style>
@@ -16,12 +13,15 @@
         </style>
     </head>
     <body>
-      <header class="row">
+      <header class="container-fuild">
         @include('includes.header')
       </header>
       <div class="container" id="app">
           @yield('content')
       </div>
+      <footer class="row">
+          @include('includes.footer')
+      </footer>
 
       <!-- Scripts -->
       <script src="{{ URL::asset('js/app.js') }}" charset="utf-8"></script>
