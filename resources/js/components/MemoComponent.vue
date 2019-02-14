@@ -17,7 +17,7 @@
               label="Title"
               sortable
               filterable
-              width="180">
+              >
                 <template slot="header" slot-scope="scope">
                   <el-input
                     v-model="search"
@@ -28,7 +28,7 @@
               </el-table-column>
           </el-table>
         </el-tab-pane>
-        <el-tab-pane label="newMemo" name="newMemo">
+        <el-tab-pane label="New Memo" name="newMemo">
           <textarea class="form-control" v-model="newMemoTxt"></textarea>
           <button @click="newMemo" class="btn btn-primary btn-block btn-lg">Save</button>
         </el-tab-pane>

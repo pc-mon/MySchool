@@ -89579,8 +89579,7 @@ var render = function() {
                       prop: "title",
                       label: "Title",
                       sortable: "",
-                      filterable: "",
-                      width: "180"
+                      filterable: ""
                     },
                     scopedSlots: _vm._u([
                       {
@@ -89613,7 +89612,7 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("el-tab-pane", { attrs: { label: "newMemo", name: "newMemo" } }, [
+          _c("el-tab-pane", { attrs: { label: "New Memo", name: "newMemo" } }, [
             _c("textarea", {
               directives: [
                 {
