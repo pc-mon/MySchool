@@ -3430,7 +3430,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3441,6 +3440,9 @@ __webpack_require__.r(__webpack_exports__);
         'title': 'First Memo'
       }]
     };
+  },
+  created: function created() {
+    this.memos = JSON.parse(localStorage.getItem('memos'));
   },
   methods: {
     newMemo: function newMemo() {
@@ -3453,6 +3455,7 @@ __webpack_require__.r(__webpack_exports__);
         message: 'Memo Saved',
         type: 'success'
       });
+      localStorage.setItem('memos', JSON.stringify(this.memos));
     }
   }
 });

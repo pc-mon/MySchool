@@ -1,6 +1,5 @@
 <template>
     <div>
-
       <el-tabs v-model="activeName" type="card" style="width: 100%">
         <el-tab-pane label="Memos" name="memos">
         <el-table
@@ -50,6 +49,9 @@
               ]
             };
         },
+        created(){
+          this.memos = JSON.parse(localStorage.getItem('memos'));
+        },
         methods:{
           newMemo(){
             this.memos.push({'title':this.newMemoTxt});
@@ -59,7 +61,7 @@
               message: 'Memo Saved',
               type: 'success'
             });
-
+            localStorage.setItem('memos', JSON.stringify(this.memos));
           }
         }
     }
