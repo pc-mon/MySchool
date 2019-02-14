@@ -3397,11 +3397,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      Welcome: 'My Memo'
+      newMemoTxt: '',
+      memos: []
     };
+  },
+  methods: {
+    newMemo: function newMemo() {
+      this.memos.push(this.newMemoTxt);
+      this.newMemoTxt = '';
+    }
   }
 });
 
@@ -88753,7 +88765,46 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n  " + _vm._s(_vm.Welcome) + "\n")])
+  return _c("div", [
+    _c("input", {
+      directives: [
+        {
+          name: "model",
+          rawName: "v-model",
+          value: _vm.newMemoTxt,
+          expression: "newMemoTxt"
+        }
+      ],
+      staticClass: "form-control",
+      attrs: { type: "text" },
+      domProps: { value: _vm.newMemoTxt },
+      on: {
+        keyup: function($event) {
+          if (
+            !$event.type.indexOf("key") &&
+            _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+          ) {
+            return null
+          }
+          return _vm.newMemo($event)
+        },
+        input: function($event) {
+          if ($event.target.composing) {
+            return
+          }
+          _vm.newMemoTxt = $event.target.value
+        }
+      }
+    }),
+    _vm._v(" "),
+    _c(
+      "ul",
+      _vm._l(_vm.memos, function(memo) {
+        return _c("li", [_vm._v("\n      " + _vm._s(memo) + "\n    ")])
+      }),
+      0
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
