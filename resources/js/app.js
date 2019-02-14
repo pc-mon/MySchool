@@ -6,8 +6,9 @@
  */
 
 require('./bootstrap');
-
+import Element from 'element-ui'
 window.Vue = require('vue');
+Vue.use(Element);
 
 /**
  * The following block of code may be used to automatically register your
